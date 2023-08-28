@@ -1,0 +1,23 @@
+version: '3'
+services:
+  prisma_studio:
+    build: ./
+    command: [ "sh", "-c", "npx prisma studio" ]
+    depends_on:
+      - backend
+      - database
+  backend:
+    build: ./
+    container_name: account_management_service
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    depends_on:
+      - database
+    networks:
+      - collabvr_network
+
+networks:
+  collabvr_network:
+    driver: bridge
