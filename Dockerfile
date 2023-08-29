@@ -1,8 +1,13 @@
 FROM node:18 as build
+
 WORKDIR /usr/src/app
+
 COPY package.json .
+
 COPY package-lock.json .
+
 RUN npm install
+
 COPY . .
 # RUN npx prisma generate
 RUN npm run build
@@ -24,4 +29,4 @@ RUN npm install --omit=dev
 ENV NODE_ENV production
 EXPOSE 3000 
 
-CMD ["dumb-init", "node", "dist/src/main"]
+CMD ["dumb-init", "node", "dist/main"]
