@@ -1,8 +1,8 @@
 version: '3'
 services:
-  collabvr_api_gateway:
+  backend:
     build: ./
-    container_name: collabvr_api_gateway
+    container_name: account_management_service
     ports:
       - '3000:3000'
     env_file:
