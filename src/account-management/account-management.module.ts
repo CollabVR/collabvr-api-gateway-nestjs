@@ -11,7 +11,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 				useFactory: (configService: ConfigService) => ({
 					transport: Transport.TCP,
 					options: {
-						host: '172.31.7.197',
+						host: '3.144.31.30',
 						port: 3100,
 					},
 				}),
