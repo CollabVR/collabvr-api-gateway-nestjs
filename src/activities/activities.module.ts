@@ -11,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 				useFactory: (configService: ConfigService) => ({
 					transport: Transport.TCP,
 					options: {
-						host: 'localhost',
+						host: '3.137.185.11',
 						port: 3200,
 					},
 				}),
