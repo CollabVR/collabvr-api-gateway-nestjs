@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AccountManagementController } from './controllers/account-management.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { RolesController } from './controllers/roles.controller';
 
 @Module({
 	imports: [
@@ -19,7 +20,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 			},
 		]),
 	],
-	controllers: [AccountManagementController],
+	controllers: [AccountManagementController, RolesController],
 	providers: [],
 })
 export class AccountManagementModule {}
