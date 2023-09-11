@@ -15,8 +15,6 @@ export class RolesController {
 	) {}
 
 	@Get()
-	@UseGuards(JwtAuthGuard)
-	@Roles('admin')
 	@ApiOkResponse({ type: RoleEntity, isArray: true })
 	@ApiBearerAuth()
 	async getRoles(): Promise<RoleEntity[]> {
