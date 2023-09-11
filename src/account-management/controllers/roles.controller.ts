@@ -16,7 +16,6 @@ export class RolesController {
 
 	@Get()
 	@ApiOkResponse({ type: RoleEntity, isArray: true })
-	@ApiBearerAuth()
 	async getRoles(): Promise<RoleEntity[]> {
 		const response = await firstValueFrom(
 			this.clientAccountManagementService.send('get-roles', {}),
