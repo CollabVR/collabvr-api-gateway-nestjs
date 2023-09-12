@@ -6,6 +6,7 @@ import {
 	IsOptional,
 	IsString,
 } from 'class-validator';
+import { ActivityUserDto } from './activity-user.dto';
 
 export class UpdateActivityDto {
 	@ApiProperty()
@@ -28,18 +29,18 @@ export class UpdateActivityDto {
 	@IsNumber()
 	@IsOptional()
 	maxParticipants?: number;
-	@ApiProperty({ type: [Number] })
+	@ApiProperty({ type: [ActivityUserDto] })
 	@IsArray()
 	@IsOptional()
-	participants?: number[];
-	@ApiProperty({ type: [Number] })
+	students?: ActivityUserDto[];
+	@ApiProperty({ type: [ActivityUserDto] })
 	@IsArray()
 	@IsOptional()
-	moderators?: number[];
+	moderators?: ActivityUserDto[];
 	@ApiProperty()
-	@IsNumber()
+	@IsString()
 	@IsOptional()
-	environmentId?: number;
+	environmentId?: string;
 	@ApiProperty()
 	@IsString()
 	@IsOptional()

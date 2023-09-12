@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { ActivityUserEntity } from './activity-user.entity';
 
 export class ActivityEntity {
 	@ApiProperty()
@@ -13,12 +14,12 @@ export class ActivityEntity {
 	endTime: string;
 	@ApiProperty()
 	maxParticipants: number;
-	@ApiProperty({ type: [Number] })
-	participants: number[];
-	@ApiProperty({ type: [Number] })
-	moderators: number[];
+	@ApiProperty({ type: [ActivityUserEntity] })
+	students: ActivityUserEntity[];
+	@ApiProperty({ type: [ActivityUserEntity] })
+	moderatos: ActivityUserEntity[];
 	@ApiProperty()
-	environmentId: number;
+	environmentId: string;
 	@ApiProperty()
 	status: string;
 }
