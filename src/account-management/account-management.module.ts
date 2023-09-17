@@ -12,7 +12,7 @@ import { RolesController } from './controllers/roles.controller';
 				useFactory: (configService: ConfigService) => ({
 					transport: Transport.TCP,
 					options: {
-						host: 'localhost',
+						host: '3.144.31.30',
 						port: 3100,
 					},
 				}),
