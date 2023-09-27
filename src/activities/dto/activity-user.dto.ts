@@ -8,5 +8,5 @@ export class ActivityUserDto {
 
 	@ApiProperty()
 	@IsString()
-	userName: string;
+	userName: string;	
 }
