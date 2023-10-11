@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AccountManagementModule } from './account-management/account-management.module';
 import { ActivitiesModule } from './activities/activities.module';
 import { AssetsModule } from './assets/assets.module';
+import { AnalyticsModule } from './analytics/analytics.module';
 
 @Module({
 	imports: [
@@ -10,6 +11,7 @@ import { AssetsModule } from './assets/assets.module';
 		AccountManagementModule,
 		ActivitiesModule,
 		AssetsModule,
+		AnalyticsModule,
 	],
 	controllers: [],
 	providers: [],
