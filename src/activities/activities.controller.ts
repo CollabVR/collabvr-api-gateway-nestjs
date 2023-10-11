@@ -58,6 +58,18 @@ export class ActivitiesController {
 		return response;
 	}
 
+	
+	@Get('/users/:id')
+	@ApiOkResponse({ type: ActivityEntity, isArray: true })
+	async getActivitiesByUserId(
+		@Param('id', ParseIntPipe) id: number,
+	): Promise<ActivityEntity> {
+		const response = await firstValueFrom(
+			this.clientActivityService.send('get-activities-by-user-id', { id }),
+		);
+		return response;
+	}
+
 	@Delete(':id')
 	@ApiOkResponse({ type: ActivityEntity, isArray: true })
 	async deleteActivityById(
