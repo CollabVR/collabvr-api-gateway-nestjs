@@ -9,10 +9,7 @@ async function bootstrap() {
 	const app = await NestFactory.create(AppModule, {
     	cors: {
 		origin: ['http://localhost:4200', 'https://collabvr.fun', 'https://api.collabvr.fun'],
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-		credentials: true,
-		preflightContinue: false,
-		optionsSuccessStatus: 204,
+		allowedHeaders: ['Content-Type'],
 		},
 	});
 
