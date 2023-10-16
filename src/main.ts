@@ -9,7 +9,7 @@ async function bootstrap() {
 	const app = await NestFactory.create(AppModule, {
     	cors: {
 		 "origin": "*",
-	});
+	}});
 
 	// binds ValidationPipe to the entire application
 	app.useGlobalPipes(
