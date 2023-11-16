@@ -7,9 +7,10 @@ import { RpcExceptionToHttpExceptionFilter } from './common/filters/RcpException
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule, {
-    	cors: {
-		 "origin": "*",
-	}});
+		cors: {
+			origin: '*',
+		},
+	});
 
 	// binds ValidationPipe to the entire application
 	app.useGlobalPipes(

@@ -12,8 +12,8 @@ import { RolesController } from './controllers/roles.controller';
 				useFactory: (configService: ConfigService) => ({
 					transport: Transport.TCP,
 					options: {
-						host: '3.145.53.150',
-						port: 3100,
+						host: configService.get<string>('ACCOUNT_MANAGEMENT_SERVICE_HOST'),
+						port: configService.get<number>('ACCOUNT_MANAGEMENT_SERVICE_PORT'),
 					},
 				}),
 				inject: [ConfigService],
